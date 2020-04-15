@@ -4,7 +4,7 @@ import '../style.css'
 import axios from 'axios'
 
 class AddRejectJob extends React.Component{
-  submitAppliedJob(event){
+  submitRejectJob(event){
     event.preventDefault()
 
     axios.post('http://localhost:4000/Application',{
