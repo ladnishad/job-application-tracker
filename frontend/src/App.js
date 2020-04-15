@@ -1,7 +1,6 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-
 import axios from 'axios'
 
 import AppliedHeaderComp from './components/AppliedHeaderComp'
@@ -30,6 +29,7 @@ class App extends React.Component{
       interviewJobAddState: false,
       offerJobAddState: false,
       rejectJobAddState: false,
+      collapse: false,
       stateData: jsonData
     }
 
@@ -139,7 +139,7 @@ class App extends React.Component{
           <AppliedHeaderComp triggerAddAppliedJobShowForm = {this.triggerAddAppliedJobShowForm}/>
           {this.state.appliedJobAddState && <AddAppliedJob />}
           <AppliedCardComp applications = {this.state.applications.filter(app => app.status.includes('Applied'))}
-          deleteApplication = {this.deleteApplication} updateApplicationToInterview = {this.updateApplicationToInterview} updateApplicationToOffer = {this.updateApplicationToOffer} updateApplicationToReject = {this.updateApplicationToReject}/>
+          collapseDesc = {this.collapseDesc} deleteApplication = {this.deleteApplication} updateApplicationToInterview = {this.updateApplicationToInterview} updateApplicationToOffer = {this.updateApplicationToOffer} updateApplicationToReject = {this.updateApplicationToReject}/>
           </div>
 
           <div className = "column" style = {{margin: "4px", width: '24%'}}>
